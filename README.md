@@ -26,7 +26,7 @@ investigated in the works of Milano et al. [5] and Germano et al. [6].
 * Source code - CACBCF/, main.py & runMetrics.py.
 * Pre-processed Yelp datasets for users and businesses.
 ## Demo video (taken from my [portfolio page](https://github.com/Lauren-Stumpf)):
-  > ![Gifdemo](https://github.com/Lauren-Stumpf/Recommender_Systems_Coursework/blob/main/video.gif)
+  > ![Gifdemo](https://github.com/Lauren-Stumpf/Recommender_Systems_Coursework/blob/main/recommender_system.gif)
   > 
   > I created a "Novel Context Aware Restaurant Recommender System Using Content-Boosted Collaborative Filtering" using a custom hybrid scheme on the Yelp Dataset. To interface with this Recommender System, I created a fully-fledged GUI where user can log in, register, submit new reviews and retrieve personalized restaurant recommendations using Content Aware Content-Boosted Collaborative Filtering. In simplified terms, the recommender would look for restaurants in your vicinity (**context-aware**, as the recommender interfaces with location services) that match the type of restaurants you like (**content-based**) and that are liked by others with similar tastes to you (**collaborative filtering**). Due to being highly optimized, the recommender can retrain itself almost instantly when a user submits a new review or on alteration to a prediction. This means the user can interact with the recommender and see the recommendations change in real-time.
 ## Instructions:
