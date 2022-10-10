@@ -1,12 +1,11 @@
-# A Novel Context Aware Restaurant Recommender System Using Content-Boosted Collaborative Filtering
+# A Novel Context Aware Movie Recommender System Using Content-Boosted Collaborative Filtering
 Submitted as part of the degree of Msci Natural Sciences (3rd year) to the Board of Examiners in the Department of Computer Sciences, Durham University. 
 This summative assignment was assessed and marked by the professor of the module in question:
-## Grade: 1st - 92/100, 3rd in year (of 116 students).
+## Grade: 1st - 89/100, 3rd in year (of 116 students).
 ## Paper Introduction:
-This paper proposes a restaurant recommender system (RS) by
+This paper proposes two movie recommender system (RS) by
 building on the works of various authors, with the aim of aiding
-users in finding restaurants they will enjoy either in their local area
-or further afield. 
+users in finding movies they will enjoy. 
 
 Collaborative filtering (CF) (Herlocker et al. [1]),
 content-based filtering (CB/CBF) and context aware (CA) (Zeng et
@@ -20,42 +19,20 @@ the literature survey by Burke [4] which compares some 41 HSs.
 
 Such systems result in a myriad of ethical issues, as surveyed and
 investigated in the works of Milano et al. [5] and Germano et al. [6].
+
 ## Contents of repo:
-* A Context Aware Restaurant Recommender System Using Content-Boosted Collaborative Filtering Paper - report.pdf.
-* A 2 minute demo video of the Recommender System designed - demoVideo.mp4.
-* Source code - CACBCF/, main.py & runMetrics.py.
-* Pre-processed Yelp datasets for users and businesses.
-## Demo video (taken from my [portfolio page](https://github.com/Lauren-Stumpf)):
+* readme.txt - Text file outlining how to run the recommender systems and command-line interface
+* pretrained_models - Pretrained models trained on a NVDIA 
+* paper.pdf - Report outling methodology and results 
+* recommender_system.gif - A demo video of the command-line interface allowing the user to interact with the Recommender Systems
+* metrics_novelty_NDCG.py - python file to calculate the novelty and diversity of the recommendations
+* preprocessing_to_create_user_and_movie_vectors.py - python file that gathers additional information on movies from IMBD and processes this into vector form (by passing the poster through ResNet50 and the description through BERT and taking the tensor product to combine these two distinct vector spaces, then various feature selection methods were performed to decrease the dimensionality) 
+* RNN.py - my implementation of [Recurrent Recommender Networks](https://alexbeutel.com/papers/rrn_wsdm2017.pdf)
+* NeuMF_hybrid.py - my implementation of [NeuMF](https://arxiv.org/pdf/1708.05031.pdf)(includes the novel contribution of content-based item and user vectors)
+* main.py - python file to run the command-line interface and recommender systems
+
+## Demo video 
   > ![Gifdemo](https://github.com/Lauren-Stumpf/Recommender_Systems_Coursework/blob/main/recommender_system.gif)
   > 
-  > I created a "Novel Context Aware Restaurant Recommender System Using Content-Boosted Collaborative Filtering" using a custom hybrid scheme on the Yelp Dataset. To interface with this Recommender System, I created a fully-fledged GUI where user can log in, register, submit new reviews and retrieve personalized restaurant recommendations using Content Aware Content-Boosted Collaborative Filtering. In simplified terms, the recommender would look for restaurants in your vicinity (**context-aware**, as the recommender interfaces with location services) that match the type of restaurants you like (**content-based**) and that are liked by others with similar tastes to you (**collaborative filtering**). Due to being highly optimized, the recommender can retrain itself almost instantly when a user submits a new review or on alteration to a prediction. This means the user can interact with the recommender and see the recommendations change in real-time.
-## Instructions:
-All scripts are designed to be run on Python 3.8.3 with the dependencies listed in requirements.txt, which can be installed via "pip install -r requirements.txt".
-- To start the recommender system (CACBCF), first make sure either pre-processed pickled user and business datasets (user.pkl & businesses.pkl),
-or the entire Yelp Open Dataset in json form, are inside the same file directory as main.py.
-
-- Then run main.py (python main.py) to enter the main user interface. 
-  * If either user.pkl or businesses.pkl is not present then they will be prepared from scratch from the Yelp Dataset (~10 mins) (which you must download from https://www.yelp.com/dataset). 
-  * Then, if post-processed-user-data.pkl is not present (which can be located within and extracted from post-processed-user-data.rar), the user profiles and model will be trained from the above (~15 mins).
-  * From this point onwards, any retraining (e.g. user feedback) will be take a second or 2. 
-    
-  * For a list of sample users to login as, either inspect users.pkl contents or use one of the following supplied examples, or instead register yourself as a new user!
-    Sample user_ids:
-    
-    - 3aYeG-x5A44GIgmBHrwyAA (227 reviews)
-    - U1vl4SQzO3wTAWlYVnSjnw (163 reviews)
-    - ZD76B53WiEdv3g2lNgTbNg (112 reviews)
-    - sKVpHfhkG_Nvgf_Vfb91Cg (88 reviews)
-    - CebjpVd3PsofCgotWp60pg (74 reviews)
-    - 5ca2MkCJFAMafDrRxLMlXQ (44 reviews)
-    - ygjIo5gLQ8wmsOcTDiHG2Q (29 reviews)
-    - 1uUwbiQfayJiGhqx3CjjIg (11 reviews)
-    - C5faJHojrEUqX5VMFrsz3Q (5 reviews)
-
-  * For sample locations, either pick anywhere in Quebec or choose from any of the following examples:
-
-     - Boulevard Saint-Laurent, Montreal
-     - H9B 1P7
-     - Brossard
-    
-- Alternatively, run runMetrics.py (python runMetrics.py) to run metrics (WARNING: on the current dataset this may take a few hours).
+  > We explore two state-of-the-art deep model-based recommender systems, a novel content-collaborative hybrid approach and a solely collaborative approach. We produce two recommender systems that foster user satisfaction in different ways; one by capturing the complex user-item interaction
+structures and a second that exploits temporal data. To compliment this we create a fully-fledged GUI where user can log in, register, submit new reviews and retrieve personalized movie recommendations using our two recommender systems. Due to being highly optimized, the recommender can retrain itself almost instantly when a user submits a new review or on alteration to a prediction which allows the user to interact with the recommender and see the recommendations change in real-time. We contrast the two different recommender methodologies and evaluate which is most effective with respect to customer satisfaction and engagement - metrics conducive to profit. We also comment on which feedback form (explicit or implicit) is more preferable to exploit from the perspective of our results.
