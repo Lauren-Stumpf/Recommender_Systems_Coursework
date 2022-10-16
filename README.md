@@ -2,6 +2,10 @@
 Submitted as part of the degree of Bsc Natural Sciences to the Board of Examiners in the Department of Computer Sciences, Durham University. 
 This summative assignment was assessed and marked by the professor of the module in question:
 ## Grade: 1st - 89/100, 3rd in year (of 116 students).
+> Exceeded requirements – beyond the basic requirements, more complex, state-of-the-art solutions were implemented. 
+> The methods were well described and/or explained, as well as mainly clearly justified. Additionally used were: more complex dataset; profiling based on a variety of > features; more advanced, state-of-the-art prediction and recommendation method; supported by literature justification of the used methods; end-user context considered. Additionally implemented were: user profile updating and adding new user; use of variety of data formats; more advanced methods; input interface – transparency; output interface –explanations used
+
+  
 ## Paper Introduction:
 We implement two state-of-the-art deep model-based recommender systems (RS), a novel content-collaborative hybrid RS and a solely collaborative RS. These RSs foster user satisfaction in different ways; the first by capturing the complex user-item interaction structures and the second that exploits temporal data. To compliment these RSs we create a fully-fledged UI where user can log in, register, submit new reviews and retrieve personalized movie recommendations using our two recommender systems. Due to being highly optimized, the recommender can retrain itself almost instantly when a user submits a new review or on alteration to a prediction which allows the user to interact with the recommender and see the recommendations change in real-time. 
 
@@ -20,5 +24,5 @@ We then contrast the two different recommender methodologies and evaluate which 
 
 ## Demo video 
   > ![Gifdemo](https://github.com/Lauren-Stumpf/Recommender_Systems_Coursework/blob/main/recommender_system.gif)
-  > 
+
 
